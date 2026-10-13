@@ -3,7 +3,15 @@ name = "rs-jsonl2redb"
 version = "0.1.0"
 edition = "2024"
 
+description = "Import JSONL data into a redb database"
+license = "Apache-2.0"
+repository = "https://github.com/takanoriyanagitani/rs-jsonl2redb"
+homepage = "https://github.com/takanoriyanagitani/rs-jsonl2redb"
+documentation = "https://docs.rs/rs-jsonl2redb/latest"
+keywords = ["json", "redb", "jsonl", "import", "convert"]
+
 exclude = [
+  "jsonl2redb.wasm",
 ]
 
 [profile.release-wasi]
