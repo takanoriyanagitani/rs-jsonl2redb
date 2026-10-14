@@ -52,6 +52,12 @@ where
     P: AsRef<Path>,
     R: BufRead,
 {
+    if table_name.is_empty() {
+        return Err(io::Error::new(
+            io::ErrorKind::InvalidInput,
+            "empty table name got",
+        ));
+    }
     let sch: TableDefinition<&str, &str> = TableDefinition::new(table_name);
     let db: Database = Database::create(redb_path).map_err(io::Error::other)?;
     let wtx: WriteTransaction = db.begin_write().map_err(io::Error::other)?;
